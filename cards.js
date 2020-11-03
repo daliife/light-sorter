@@ -1,5 +1,5 @@
 // external js: isotope.pkgd.js
-
+// https://isotope.metafizzy.co/
 
 // init Isotope
 var $grid = $('.grid').isotope({
