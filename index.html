@@ -1,68 +1,77 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <h1>Isotope - filtering &amp; sorting</h1>
-    <h2>Filter</h2>
-    <div id="filters" class="button-group">  <button class="button is-checked" data-filter="*">show all</button>
-      <button class="button" data-filter=".metal">metal</button>
-      <button class="button" data-filter=".transition">transition</button>
-      <button class="button" data-filter=".alkali, .alkaline-earth">alkali and alkaline-earth</button>
-      <button class="button" data-filter=":not(.transition)">not transition</button>
-      <button class="button" data-filter=".metal:not(.transition)">metal but not transition</button>
-      <button class="button" data-filter="numberGreaterThan50">number > 50</button>
-      <button class="button" data-filter="ium">name ends with &ndash;ium</button>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <h2>Filter</h2>
+  <div id="filters" class="button-group"> <button class="button is-checked" data-filter="*">show all</button>
+    <button class="button" data-filter=".trust">trust</button>
+    <button class="button" data-filter=".innovation">innovation</button>
+    <button class="button" data-filter=".responsability">responsability</button>
+    <button class="button" data-filter=".proactivity">proactivity</button>
+    <button class="button" data-filter=":not(.empty)">not empty</button>
+    <button class="button" data-filter=".empty)">empty ones</button>
+  </div>
+
+  <h2>Sort</h2>
+  <div id="sorts" class="button-group"> <button class="button is-checked" data-sort-by="original-order">original
+      order</button>
+    <button class="button" data-sort-by="name">name</button>
+    <button class="button" data-sort-by="value">value</button>
+    <button class="button" data-sort-by="date">date</button>
+    <button class="button" data-sort-by="weight">weight</button>
+    <button class="button" data-sort-by="category">category</button>
+  </div>
+
+  <!-- FILTER -->
+  <div class="navbar-container">
+    <div class="filter-container">
+      <a href="#" class="order-option">Ordenar por más recientes</a>
+      <a href="#" class="order-option">Ordenar por valor</a>
     </div>
-    
-    <h2>Sort</h2>
-    <div id="sorts" class="button-group">  <button class="button is-checked" data-sort-by="original-order">original order</button>
-      <button class="button" data-sort-by="name">name</button>
-      <button class="button" data-sort-by="symbol">symbol</button>
-      <button class="button" data-sort-by="number">number</button>
-      <button class="button" data-sort-by="weight">weight</button>
-      <button class="button" data-sort-by="category">category</button>
+    <div class="action-container">
+      <button class="btn-value" onclick="console.log('click');">Enciende un nuevo valor</button>
     </div>
-    
-    <div class="grid">
-      <a href="https://google.es" target="_blank"es">
-        <div class="element-item transition metal " data-category="transition">
-          <div class="inner-square"></div>
-          <h3 class="name">Mercury</h3>
-          <p class="symbol">Hg</p>
-          <p class="number">80</p>
-          <p class="weight">200.59</p>
-        </div>
-      </a>
-      <a href="https://google.es" target="_blank">
-        <div class="element-item metalloid " data-category="metalloid">
-          <div class="inner-square"></div>
-          <h3 class="name">Tellurium</h3>
-          <p class="symbol">Te</p>
-          <p class="number">52</p>
-          <p class="weight">127.6</p>
-        </div>
-      </a>
-      <a href="https://google.es" target="_blank">
-      <div class="element-item post-transition metal " data-category="post-transition">
-        <div class="inner-square"></div>
-        <h3 class="name">Bismuth</h3>
-        <p class="symbol">Bi</p>
-        <p class="number">83</p>
-        <p class="weight">208.980</p>
-      </div>
-      </a>
+  </div>
+
+  <!-- DEMO -->
+  <div class="demo-grid"></div>
+
+  <!-- LEGEND -->
+  <div class="legend">
+    <div class="legend-element">
+      <div class="legend-sample trust"></div>
+      <p class="legend-name">Confianza</p>
     </div>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-    <script src="cards.js"></script>
-  </body>
+    <div class="legend-element">
+      <div class="legend-sample innovation"></div>
+      <p class="legend-name">Innovación</p>
+    </div>
+    <div class="legend-element">
+      <div class="legend-sample responsability"></div>
+      <p class="legend-name">Responsabilidad</p>
+    </div>
+    <div class="legend-element">
+      <div class="legend-sample proactivity"></div>
+      <p class="legend-name">Proactividad</p>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+  <script src="cards.js"></script>
+</body>
+
 </html>

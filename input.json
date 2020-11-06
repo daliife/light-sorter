@@ -1,0 +1,11 @@
+{
+  "behaviours": [
+    {
+      "type": 0,
+      "title": "Title",
+      "date": 20202020,
+      "url": "https://google.es",
+      "description": "lorem ipsum sit amet..."
+    }
+  ]
+}
