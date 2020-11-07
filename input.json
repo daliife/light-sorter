@@ -1,11 +1,47 @@
 {
   "behaviours": [
     {
-      "type": 0,
-      "title": "Title",
-      "date": 20202020,
-      "url": "https://google.es",
+      "type": "innovation",
+      "title": "A",
+      "date": 20202001,
+      "url": "https://google.com",
       "description": "lorem ipsum sit amet..."
-    }
+    },
+    {
+      "type": "trust",
+      "title": "E",
+      "date": 20202005,
+      "url": "https://google.com",
+      "description": "lorem ipsum sit amet..."
+    },
+    {
+      "type": "innovation",
+      "title": "D",
+      "date": 20202002,
+      "url": "https://google.com",
+      "description": "lorem ipsum sit amet..."
+    },
+    {
+      "type": "responsability",
+      "title": "T",
+      "date": 20202003,
+      "url": "https://google.com",
+      "description": "lorem ipsum sit amet..."
+    },
+
+    {
+      "type": "proactivity",
+      "title": "B",
+      "date": 20202010,
+      "url": "https://google.com",
+      "description": "lorem ipsum sit amet..."
+    },
+    {
+      "type": "responsability",
+      "title": "G",
+      "date": 20202020,
+      "url": "https://google.com",
+      "description": "lorem ipsum sit amet..."
+    },
   ]
-}
+};

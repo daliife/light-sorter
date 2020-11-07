@@ -13,58 +13,62 @@
 
 <body>
 
-  <h2>Filter</h2>
-  <div id="filters" class="button-group"> <button class="button is-checked" data-filter="*">show all</button>
-    <button class="button" data-filter=".trust">trust</button>
-    <button class="button" data-filter=".innovation">innovation</button>
-    <button class="button" data-filter=".responsability">responsability</button>
-    <button class="button" data-filter=".proactivity">proactivity</button>
-    <button class="button" data-filter=":not(.empty)">not empty</button>
-    <button class="button" data-filter=".empty)">empty ones</button>
-  </div>
 
-  <h2>Sort</h2>
-  <div id="sorts" class="button-group"> <button class="button is-checked" data-sort-by="original-order">original
-      order</button>
-    <button class="button" data-sort-by="name">name</button>
-    <button class="button" data-sort-by="value">value</button>
-    <button class="button" data-sort-by="date">date</button>
-    <button class="button" data-sort-by="weight">weight</button>
-    <button class="button" data-sort-by="category">category</button>
-  </div>
+  <div class="demo-container">
 
-  <!-- FILTER -->
-  <div class="navbar-container">
-    <div class="filter-container">
-      <a href="#" class="order-option">Ordenar por más recientes</a>
-      <a href="#" class="order-option">Ordenar por valor</a>
+    <!-- FILTER -->
+    <!-- <h2>Filter</h2>
+    <div id="filters" class="button-group"> <button class="button is-checked" data-filter="*">show all</button>
+      <button class="button" data-filter=".trust">trust</button>
+      <button class="button" data-filter=".innovation">innovation</button>
+      <button class="button" data-filter=".responsability">responsability</button>
+      <button class="button" data-filter=".proactivity">proactivity</button>
+      <button class="button" data-filter=":not(.empty)">not empty</button>
+      <button class="button" data-filter=".empty">empty ones</button>
     </div>
-    <div class="action-container">
-      <button class="btn-value" onclick="console.log('click');">Enciende un nuevo valor</button>
+    <h2>Sort</h2> -->
+    <div class="navbar-container">
+      <div id="sorts" class="filter-container button-group">
+        <button class="order-option is-checked" data-sort-by="original-order">Orden original</button>
+        <button class="order-option" data-sort-by="date">Ordenar por más recientes</button>
+        <button class="order-option" data-sort-by="title">Ordenar por valor (titulo)</button>
+      </div>
+      <div class="action-container">
+        <button class="btn-value" onclick="console.log('click');">Enciende un nuevo valor</button>
+      </div>
     </div>
-  </div>
 
-  <!-- DEMO -->
-  <div class="demo-grid"></div>
-1
-  <!-- LEGEND -->
-  <div class="legend">
-    <div class="legend-element">
-      <div class="legend-sample trust"></div>
-      <p class="legend-name">Confianza</p>
+    <!-- DEMO -->
+    <div class="demo-grid"></div>
+
+    <!-- LEGEND -->
+    <div class="legend">
+      <div class="legend-element">
+        <div class="legend-sample trust"></div>
+        <p class="legend-name">Confianza</p>
+      </div>
+      <div class="legend-element">
+        <div class="legend-sample innovation"></div>
+        <p class="legend-name">Innovación</p>
+      </div>
+      <div class="legend-element">
+        <div class="legend-sample responsability"></div>
+        <p class="legend-name">Responsabilidad</p>
+      </div>
+      <div class="legend-element">
+        <div class="legend-sample proactivity"></div>
+        <p class="legend-name">Proactividad</p>
+      </div>
     </div>
-    <div class="legend-element">
-      <div class="legend-sample innovation"></div>
-      <p class="legend-name">Innovación</p>
+
+    <!-- CARD -->
+    <div class="card-container">
+      <img src="https://via.placeholder.com/220x163" alt="card-image" class="card-image">
+      <h1 class="card-value">Nombre del valor</h1>
+      <h2 class="card-description">Destacado a modo titular del testimonio a mostrar</h2>
+      <a href="https://google.es" class="card-link">Ir al detalle ></a>
     </div>
-    <div class="legend-element">
-      <div class="legend-sample responsability"></div>
-      <p class="legend-name">Responsabilidad</p>
-    </div>
-    <div class="legend-element">
-      <div class="legend-sample proactivity"></div>
-      <p class="legend-name">Proactividad</p>
-    </div>
+
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

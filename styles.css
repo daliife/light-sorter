@@ -1,100 +1,28 @@
 /* DESIGNS https://www.sketch.com/s/d98feef4-ccdb-473a-9f92-ee96baef8323/a/vp3wx3 */
-
 * {
   box-sizing: border-box;
   background-color: white;
 }
-
 body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
 }
-
-/* ---- button ---- */
-
-.button {
-  display: inline-block;
-  padding: 0.5em 1em;
-  background: #eee;
-  border: none;
-  border-radius: 7px;
-  background-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2));
-  color: #222;
-  font-family: sans-serif;
-  font-size: 16px;
-  text-shadow: 0 1px white;
-  cursor: pointer;
+.demo-container{
+  margin: 5rem 15rem;
 }
-
-.button:hover {
-  background-color: #8cf;
-  text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
-  color: #222;
-}
-
-.button:active,
-.button.is-checked {
-  background-color: #28f;
-}
-
-.button.is-checked {
-  color: white;
-  text-shadow: 0 -1px hsla(0, 0%, 0%, 0.8);
-}
-
-.button:active {
-  box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
-}
-
-/* ---- button-group ---- */
-
-.button-group {
-  margin-bottom: 20px;
-}
-
-.button-group:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-.button-group .button {
-  float: left;
-  border-radius: 0;
-  margin-left: 0;
-  margin-right: 1px;
-}
-
-.button-group .button:first-child {
-  border-radius: 0.5em 0 0 0.5em;
-}
-.button-group .button:last-child {
-  border-radius: 0 0.5em 0.5em 0;
-}
-
-/* ---- isotope ---- */
-
-.grid, .demo-grid {
-  /* background-color: black;  */
-}
-
 /* clear fix */
 .grid:after, .demo-grid:after{
   content: "";
   display: block;
   clear: both;
 }
-
-/* ---- .element-item ---- */
-
 .element-item {
   position: relative;
   float: left;
-  width: 28px;
-  height: 28px;
-  margin: 5px 2.5px;
-  /* padding: 10px; */
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: 2.5px;
   background: #888;
   color: #262524;
   display: flex;
@@ -102,8 +30,8 @@ body {
   align-items: center;
 }
 .element-item .inner-square {
-  width: 14px;
-  height: 14px;
+  width: 0.875rem;
+  height: 0.875rem;
   transition: 1000ms all ease-in-out;
 }
 .element-item:hover .inner-square {
@@ -111,10 +39,10 @@ body {
   height: 100%;
   transition: 50ms all ease-in-out;
 }
-.weight,
-.name,
-.value,
-.date {
+.type,
+.title,
+.date,
+.url, .description {
   display: none;
 }
 .trust {
@@ -132,20 +60,19 @@ body {
 .empty {
   background:rgba(198, 198, 198, 0.4)
 }
-
-.inner-square.trust {
+.inner-square.trust, .legend-sample.trust {
   background: #41b9e6;
 }
-.inner-square.innovation {
+.inner-square.innovation, .legend-sample.innovation {
   background: #55be5a;
 }
-.inner-square.responsability {
+.inner-square.responsability, .legend-sample.responsability {
   background: #ff5a0f;
 }
-.inner-square.proactivity {
+.inner-square.proactivity, .legend-sample.proactivity {
   background: #ff4687;
 }
-.inner-square.empty {
+.inner-square.empty, .legend-sample.empty{
   background: #C6C6C6;
 }
 
@@ -172,7 +99,6 @@ body {
   width: 12px;
   margin: 0 1rem;
 }
-
 .navbar-container {
   display: flex;
   flex-direction: row;
@@ -182,18 +108,28 @@ body {
 .filter-container {
   display: flex;
   align-items: center;
-  margin: 0 1rem;
+  margin: 0;
 }
 .order-option {
+  border: none;
   font-size: 16px;
   color: #667690;
   padding: 0.5rem 0rem;
   margin: 0rem 1rem;
   text-decoration: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: solid 4px transparent;
+  transition: 500ms all ease-in-out;
 }
-.order-option:active {
+.order-option:first-child {
+  margin-left:0;
+  margin-right:1rem;
+}
+
+.order-option:active, .is-checked {
   color: #000000;
-  border-bottom: solid 4px #0555fa;
+  border-bottom: solid 4px #0555fa!important;
 }
 .btn-value {
   padding: 1rem 2rem;
@@ -211,4 +147,30 @@ body {
 .btn-value:hover {
    background-color: #ffbbd4;
    color: #d3135a;
+}
+
+.card-container{
+  width: 270px;
+  /* height: 364px; */
+  background-color: white;
+  box-shadow: 0px 0px 4px 0px #C6C6C6;
+  padding: 22px 28px;
+}
+.card-value{
+  font-size: 16px;
+  color: #000000;
+  font-weight: 400;
+}
+.card-description{
+  font-size: 18px;
+  color: #000000;
+  font-weight: 400;
+  line-height: 29px;
+  font-weight: bold;
+}
+.card-link{
+  font-size: 16px;
+  color: #D3135A;
+  font-weight: 400;
+  text-decoration: none;
 }
