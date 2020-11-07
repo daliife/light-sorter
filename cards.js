@@ -87,6 +87,9 @@ $(document).ready(function(){
   const numColumns = 11;
   const NUM_EL = numRows * numColumns - behaviours.behaviours.length;
   
+  // var mydata = JSON.parse(behaviours);
+  // console.log(mydata);
+
   $.ajax("input.json").done(function(cast){
     console.log(cast);
   });
@@ -102,7 +105,6 @@ $(document).ready(function(){
     result = template(emptyObject);
     $('.demo-grid').append(result);
   }
-  
   
   // init Isotope
   var $grid = $('.demo-grid').isotope({
@@ -157,5 +159,4 @@ $(document).ready(function(){
     });
   });
 
-
-})
+});
