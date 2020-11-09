@@ -9,11 +9,10 @@ body {
   padding: 0;
 }
 .demo-container {
-  margin: 2rem 5rem;
+  /* margin: 2rem 5rem; */
 }
 /* clear fix */
-.grid:after,
-.demo-grid:after {
+.grid:after {
   content: "";
   display: block;
   clear: both;
@@ -29,6 +28,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .element-item .inner-square {
   width: 0.875rem;
@@ -44,7 +44,8 @@ body {
 .title,
 .date,
 .url,
-.description {
+.description,
+.imageUrl {
   display: none;
 }
 .trust {
@@ -53,7 +54,7 @@ body {
 .innovation {
   background: rgba(85, 190, 90, 0.4);
 }
-.responsability {
+.responsibility {
   background: rgba(255, 90, 15, 0.4);
 }
 .proactivity {
@@ -82,19 +83,26 @@ body {
 .legend-sample.empty {
   background: #c6c6c6;
 }
-
 .legend {
   display: flex;
   flex-direction: row;
+  flex-flow: wrap;
   width: 100%;
   justify-content: flex-end;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
+  margin-top: 3.125rem;
+}
+@media (max-width: 600px) {
+  .legend {
+    display: none;
+  }
 }
 .legend-element {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-right: 1rem;
+  margin-top: 1rem;
 }
 .legend-name {
   font-size: 16px;
@@ -111,6 +119,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   margin: 1rem 0;
+  flex-flow: wrap;
 }
 .filter-container {
   display: flex;
@@ -127,13 +136,16 @@ body {
   outline: none;
   background-color: transparent;
   border-bottom: solid 4px transparent;
-  transition: 500ms all ease-in-out;
+  transition: 250ms all ease-in-out;
+  cursor: pointer;
 }
 .order-option:first-child {
   margin-left: 0;
   margin-right: 1rem;
 }
-
+.order-option:hover {
+  border-bottom: solid 4px lightgray;
+}
 .order-option:active,
 .is-checked {
   color: #000000;
@@ -151,6 +163,7 @@ body {
   outline: none;
   border: none;
   transition: 250ms all ease-in-out;
+  cursor: pointer;
 }
 .btn-value:hover {
   background-color: #ffbbd4;

@@ -1,57 +1,51 @@
 var behaviours = {
   behaviours: [
     {
-      type: "innovation",
-      title: "A",
+      title: "A title text",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      imageUrl: "https://picsum.photos/220/163",
+      url: "https://isotope.metafizzy.co/sorting.html",
       date: 20202001,
-      url: "https://google.com",
-      description: "lorem ipsum sit amet...",
-    },
-    {
-      type: "trust",
-      title: "E",
-      date: 20202005,
-      url: "https://google.com",
-      description: "lorem ipsum sit amet...",
-    },
-    {
       type: "innovation",
-      title: "D",
+    },
+    {
+      title: "E title text",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      imageUrl: "https://picsum.photos/220/163",
+      url: "https://isotope.metafizzy.co/sorting.html",
+      date: 20202005,
+      type: "trust",
+    },
+    {
+      title: "D title text",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      imageUrl: "https://picsum.photos/220/163",
+      url: "https://isotope.metafizzy.co/sorting.html",
       date: 20202002,
-      url: "https://google.com",
-      description: "lorem ipsum sit amet...",
-    },
-    {
-      type: "responsability",
-      title: "T",
-      date: 20202003,
-      url: "https://google.com",
-      description: "lorem ipsum sit amet...",
-    },
-
-    {
       type: "proactivity",
-      title: "B",
-      date: 20202010,
-      url: "https://google.com",
-      description: "lorem ipsum sit amet...",
     },
     {
-      type: "responsability",
-      title: "G",
-      date: 20202020,
-      url: "https://google.com",
-      description: "lorem ipsum sit amet...",
+      title: "T title text",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      imageUrl: "https://picsum.photos/220/163",
+      url: "https://isotope.metafizzy.co/sorting.html",
+      date: 20202003,
+      type: "responsibility",
     },
   ],
 };
 
 var emptyObject = {
+  title: "ZZZZZ",
+  description: "Empty object",
+  imageUrl: "https://via.placeholder.com/220x163",
+  url: "https://google.es",
+  date: 0,
   type: "empty",
-  title: "Empty",
-  date: null,
-  url: "https://google.com",
-  description: "Empty description...",
 };
 
 var multipleSource = `
@@ -59,18 +53,20 @@ var multipleSource = `
   <div class="element-item {{this.type}}" data-category="{{this.type}}" onclick="updateDescription(this);">
     <div class="inner-square {{this.type}}"></div>
     <p class="title">{{this.title}}</p>
-    <p class="date">{{this.date}}</p>
-    <p class="url">{{this.url}}</p>
     <p class="description">{{this.description}}</p>
+    <p class="imageUrl">{{this.imageUrl}}</p>
+    <p class="url">{{this.url}}</p>
+    <p class="date">{{this.date}}</p>
   </div>
 {{/each}}
 `;
 
 var uniqueSource = `
-<div class="element-item {{type}}" data-category="{{type}}" onclick="updateDescription(this);">
+<div class="element-item {{type}}" data-category="{{type}}" onclick="updateDescription(this); style="pointer-events>
   <div class="inner-square {{type}}"></div>
   <p class="title">{{title}}</p>
   <p class="description">{{description}}</p>
+  <p class="imageUrl">{{imageUrl}}</p>
   <p class="url">{{url}}</p>
   <p class="date">{{date}}</p>
 </div>
@@ -89,43 +85,44 @@ function updateDescription(newCardInfo) {
     "href",
     jQuery(newCardInfo).children(".url")[0].innerText
   );
+  $(".card-image").attr(
+    "src",
+    jQuery(newCardInfo).children(".imageUrl")[0].innerText
+  );
+
+  //TODO: Appear on next on click element
 }
 
 $(document).ready(function () {
   const numRows = 30;
   const numColumns = 11;
-  const NUM_EL = numRows * numColumns - behaviours.behaviours.length;
+  var NUM_EL;
+  if (behaviours.behaviours.length >= numRows * numColumns) {
+    NUM_EL = behaviours.behaviours.length + 30;
+  } else {
+    NUM_EL = numRows * numColumns - behaviours.behaviours.length;
+  }
 
   // TODO: Load json from server url (CORS PROBLEM)
-  // $.ajax("input.json").done(function(cast){
-  //   console.log('finish', cast);
-  // });
-  // fetch('data.json')
-  // .then(response => response.json())
-  // .then(data => {
-  //   console.log(data);
-  // });
 
   // Fill from json
   var template = Handlebars.compile(multipleSource);
   var result = template(behaviours);
-  $(".demo-grid").append(result);
+  $(".grid").append(result);
 
-  for (let i = 0; i < 10; i++) {
-    $(".demo-grid").append(result);
-  }
   // Fill remaining to empty
   template = Handlebars.compile(uniqueSource);
   for (let i = 0; i < NUM_EL; i++) {
     result = template(emptyObject);
-    $(".demo-grid").append(result);
+    $(".grid").append(result);
   }
 
   // init Isotope
-  var $grid = $(".demo-grid").isotope({
+  var $grid = $(".grid").isotope({
     itemSelector: ".element-item",
     layoutMode: "masonry",
     sortBy: "random",
+    sortAscending: true,
     getSortData: {
       title: ".title",
       description: ".description",
