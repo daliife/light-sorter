@@ -121,8 +121,8 @@ $(document).ready(function () {
   var $grid = $(".grid").isotope({
     itemSelector: ".element-item",
     layoutMode: "masonry",
-    sortBy: "random",
-    sortAscending: true,
+    sortBy: "date",
+    sortAscending: false,
     getSortData: {
       title: ".title",
       description: ".description",
