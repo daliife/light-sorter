@@ -1,21 +1,13 @@
 /* DESIGNS https://www.sketch.com/s/d98feef4-ccdb-473a-9f92-ee96baef8323/a/vp3wx3 */
-* {
-  box-sizing: border-box;
-  background-color: white;
-}
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-}
-.demo-container {
-  /* margin: 2rem 5rem; */
-}
 /* clear fix */
 .grid:after {
   content: "";
   display: block;
   clear: both;
+}
+.grid-container{
+  /* margin: 2rem 5rem; */
+  font-family: Arial, Helvetica, sans-serif;
 }
 .element-item {
   position: relative;
@@ -28,7 +20,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
 .element-item .inner-square {
   width: 0.875rem;
@@ -71,17 +62,24 @@ body {
 .legend-sample.innovation {
   background: #55be5a;
 }
-.inner-square.responsability,
-.legend-sample.responsability {
+.inner-square.responsibility,
+.legend-sample.responsibility {
   background: #ff5a0f;
 }
 .inner-square.proactivity,
 .legend-sample.proactivity {
   background: #ff4687;
 }
+.inner-square.empty {
+  width: 0.875rem !important;
+  height: 0.875rem !important;
+}
 .inner-square.empty,
 .legend-sample.empty {
   background: #c6c6c6;
+}
+.clickable {
+  cursor: pointer;
 }
 .legend {
   display: flex;
@@ -90,11 +88,17 @@ body {
   width: 100%;
   justify-content: flex-end;
   margin-bottom: 1rem;
-  margin-top: 3.125rem;
+  margin-top: 1rem;
 }
 @media (max-width: 600px) {
   .legend {
+    margin-top: 0.5rem;
     display: none;
+  }
+  .card-container{
+    position: sticky!important;
+    transform: none!important;
+    left: auto!important;
   }
 }
 .legend-element {
@@ -137,7 +141,6 @@ body {
   background-color: transparent;
   border-bottom: solid 4px transparent;
   transition: 250ms all ease-in-out;
-  cursor: pointer;
 }
 .order-option:first-child {
   margin-left: 0;
@@ -163,19 +166,26 @@ body {
   outline: none;
   border: none;
   transition: 250ms all ease-in-out;
-  cursor: pointer;
 }
 .btn-value:hover {
   background-color: #ffbbd4;
   color: #d3135a;
 }
-
 .card-container {
   width: 270px;
   /* height: 364px; */
   background-color: white;
   box-shadow: 0px 0px 4px 0px #c6c6c6;
   padding: 22px 28px;
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0%);
+  transition: 500ms all ease-in-out;
+  opacity: 1;
 }
 .card-value {
   font-size: 16px;
@@ -194,4 +204,8 @@ body {
   color: #d3135a;
   font-weight: 400;
   text-decoration: none;
+}
+.hidden {
+  opacity: 0;
+  pointer-events: none;
 }

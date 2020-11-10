@@ -11,29 +11,43 @@
   </head>
 
   <body>
-    <div class="demo-container">
+    <div class="grid-container">
       <!-- SORTING -->
       <div class="navbar-container">
         <div id="sorts" class="filter-container button-group">
-          <button class="order-option is-checked" data-sort-by="original-order">
+          <button class="order-option clickable is-checked" data-sort-by="original-order">
             Orden original
           </button>
-          <button class="order-option" data-sort-by="date">
+          <button class="order-option clickable" data-sort-by="date">
             Ordenar por más recientes
           </button>
-          <button class="order-option" data-sort-by="title">
+          <button class="order-option clickable" data-sort-by="title">
             Ordenar por valor (titulo)
           </button>
         </div>
         <div class="action-container">
-          <button class="btn-value" onclick="console.log('click');">
+          <button class="btn-value clickable" onclick="console.log('click');">
             Enciende un nuevo valor
           </button>
         </div>
       </div>
 
       <!-- DEMO -->
-      <div class="grid"></div>
+      <div class="grid">
+        <!-- CARD -->
+        <div id="myTarget" class="card-container">
+          <img
+            src="https://via.placeholder.com/220x163"
+            alt="card-image"
+            class="card-image"
+          />
+          <h1 class="card-value">Nombre del valor</h1>
+          <h2 class="card-description">
+            Destacado a modo titular del testimonio a mostrar
+          </h2>
+          <a href="#" target="_blank" class="card-link">Ir al detalle ></a>
+        </div>
+      </div>
 
       <!-- LEGEND -->
       <div class="legend">
@@ -53,20 +67,6 @@
           <div class="legend-sample proactivity"></div>
           <p class="legend-name">Proactividad</p>
         </div>
-      </div>
-
-      <!-- CARD -->
-      <div class="card-container">
-        <img
-          src="https://via.placeholder.com/220x163"
-          alt="card-image"
-          class="card-image"
-        />
-        <h1 class="card-value">Nombre del valor</h1>
-        <h2 class="card-description">
-          Destacado a modo titular del testimonio a mostrar
-        </h2>
-        <a href="#" target="_blank" class="card-link">Ir al detalle ></a>
       </div>
     </div>
 

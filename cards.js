@@ -50,7 +50,7 @@ var emptyObject = {
 
 var multipleSource = `
 {{#each behaviours}}
-  <div class="element-item {{this.type}}" data-category="{{this.type}}" onclick="updateDescription(this);">
+  <div class="element-item {{this.type}} clickable" data-category="{{this.type}}" onclick="updateDescription(this);">
     <div class="inner-square {{this.type}}"></div>
     <p class="title">{{this.title}}</p>
     <p class="description">{{this.description}}</p>
@@ -144,6 +144,26 @@ $(document).ready(function () {
       return name.match(/ium$/);
     },
   };
+
+  // Logic to hide or show the card info
+  const target = document.querySelector("#myTarget");
+  document.addEventListener("click", (event) => {
+    const withinBoundaries = event.composedPath().includes(target);
+    if (
+      (!withinBoundaries &&
+        event.toElement.className.includes("inner-square") &&
+        event.toElement.className.includes("trust")) ||
+      event.toElement.className.includes("responsibility") ||
+      event.toElement.className.includes("innovation") ||
+      event.toElement.className.includes("proactivity")
+    ) {
+      console.log("show");
+      $("#myTarget").removeClass("hidden");
+    } else {
+      console.log("hide");
+      $("#myTarget").addClass("hidden");
+    }
+  });
 
   // bind filter button click
   $("#filters").on("click", "button", function () {
