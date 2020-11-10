@@ -15,17 +15,11 @@
       <!-- SORTING -->
       <div class="navbar-container">
         <div id="sorts" class="filter-container button-group">
-          <!-- <button
-            class="order-option clickable is-checked"
-            data-sort-by="original-order"
-          >
-            Orden original
-          </button> -->
           <button class="order-option clickable is-checked" data-sort-by="date">
             Ordenar por más recientes
           </button>
-          <button class="order-option clickable" data-sort-by="title">
-            Ordenar por valor (titulo)
+          <button class="order-option clickable" data-sort-by="category">
+            Ordenar por valor
           </button>
         </div>
         <div class="action-container">
@@ -33,6 +27,17 @@
             Enciende un nuevo valor
           </button>
         </div>
+      </div>
+      <!-- SORTING MOBILE -->
+      <div class="navbar-mobile-container">
+        <label class="order-label" for="order-option"><i class="fas fa-arrows-alt-v"></i> Ordenar por: </label>
+        <select class="order-options" name="order-option" id="mobile-sort">
+          <option value="date">Más recientes</option>
+          <option value="category">Valor</option>
+        </select>
+        <button class="btn-value btn-value-mobile clickable" onclick="console.log('click');">
+          Enciende un nuevo valor
+        </button>
       </div>
 
       <!-- DEMO -->
@@ -63,7 +68,7 @@
           <p class="legend-name">Innovación</p>
         </div>
         <div class="legend-element">
-          <div class="legend-sample responsability"></div>
+          <div class="legend-sample responsibility"></div>
           <p class="legend-name">Responsabilidad</p>
         </div>
         <div class="legend-element">
@@ -76,6 +81,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
     <script type="text/javascript" src="input.json"></script>
     <script src="cards.js"></script>

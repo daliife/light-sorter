@@ -4,7 +4,7 @@ var behaviours = {
       title: "A title text",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
-      imageUrl: "https://picsum.photos/220/163",
+      imageUrl: "https://picsum.photos/220/161",
       url: "https://isotope.metafizzy.co/sorting.html",
       date: 20202001,
       type: "innovation",
@@ -13,7 +13,7 @@ var behaviours = {
       title: "E title text",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
-      imageUrl: "https://picsum.photos/220/163",
+      imageUrl: "https://picsum.photos/220/162",
       url: "https://isotope.metafizzy.co/sorting.html",
       date: 20202005,
       type: "trust",
@@ -31,23 +31,48 @@ var behaviours = {
       title: "T title text",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
-      imageUrl: "https://picsum.photos/220/163",
+      imageUrl: "https://picsum.photos/220/164",
+      url: "https://isotope.metafizzy.co/sorting.html",
+      date: 20202003,
+      type: "trust",
+    },
+    {
+      title: "T title text",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      imageUrl: "https://picsum.photos/220/165",
+      url: "https://isotope.metafizzy.co/sorting.html",
+      date: 20202003,
+      type: "innovation",
+    },
+    {
+      title: "T title text",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      imageUrl: "https://picsum.photos/220/166",
       url: "https://isotope.metafizzy.co/sorting.html",
       date: 20202003,
       type: "responsibility",
     },
+    {
+      title: "T title text",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      imageUrl: "https://picsum.photos/220/167",
+      url: "https://isotope.metafizzy.co/sorting.html",
+      date: 20202003,
+      type: "proactivity",
+    },
   ],
 };
-
 var emptyObject = {
-  title: "ZZZZZ",
+  title: "Z",
   description: "Empty object",
   imageUrl: "https://via.placeholder.com/220x163",
   url: "https://google.es",
   date: 0,
   type: "empty",
 };
-
 var multipleSource = `
 {{#each behaviours}}
   <div class="element-item {{this.type}} clickable" data-category="{{this.type}}" onclick="updateDescription(this);">
@@ -60,7 +85,6 @@ var multipleSource = `
   </div>
 {{/each}}
 `;
-
 var uniqueSource = `
 <div class="element-item {{type}}" data-category="{{type}}" onclick="updateDescription(this); style="pointer-events>
   <div class="inner-square {{type}}"></div>
@@ -89,30 +113,29 @@ function updateDescription(newCardInfo) {
     "src",
     jQuery(newCardInfo).children(".imageUrl")[0].innerText
   );
-
-  //TODO: Appear on next on click element
 }
 
 $(document).ready(function () {
-  const numRows = 30;
-  const numColumns = 11;
-  var NUM_EL;
-  if (behaviours.behaviours.length >= numRows * numColumns) {
-    NUM_EL = behaviours.behaviours.length + 30;
+  const NUM_ROWS = 10;
+  const NUM_COLUMS = 33;
+  var NUM_EMPTY_ELEMENTS;
+
+  // add more rows if json elements are higher than
+  if (behaviours.behaviours.length >= NUM_ROWS * NUM_COLUMS) {
+    NUM_EMPTY_ELEMENTS = behaviours.behaviours.length + 30;
   } else {
-    NUM_EL = numRows * numColumns - behaviours.behaviours.length;
+    NUM_EMPTY_ELEMENTS = NUM_ROWS * NUM_COLUMS - behaviours.behaviours.length;
   }
 
+  // fill elements from data mock/json
   // TODO: Load json from server url (CORS PROBLEM)
-
-  // Fill from json
   var template = Handlebars.compile(multipleSource);
   var result = template(behaviours);
   $(".grid").append(result);
 
-  // Fill remaining to empty
+  // fill remaining elements with empty
   template = Handlebars.compile(uniqueSource);
-  for (let i = 0; i < NUM_EL; i++) {
+  for (let i = 0; i < NUM_EMPTY_ELEMENTS; i++) {
     result = template(emptyObject);
     $(".grid").append(result);
   }
@@ -129,48 +152,6 @@ $(document).ready(function () {
       date: ".date parseInt",
       category: "[data-category]",
     },
-  });
-
-  // filter functions
-  var filterFns = {
-    // show if number is greater than 50
-    numberGreaterThan50: function () {
-      var number = $(this).find(".number").text();
-      return parseInt(number, 10) > 50;
-    },
-    // show if name ends with -ium
-    ium: function () {
-      var name = $(this).find(".name").text();
-      return name.match(/ium$/);
-    },
-  };
-
-  // Logic to hide or show the card info
-  const target = document.querySelector("#myTarget");
-  document.addEventListener("click", (event) => {
-    const withinBoundaries = event.composedPath().includes(target);
-    if (
-      (!withinBoundaries &&
-        event.toElement.className.includes("inner-square") &&
-        event.toElement.className.includes("trust")) ||
-      event.toElement.className.includes("responsibility") ||
-      event.toElement.className.includes("innovation") ||
-      event.toElement.className.includes("proactivity")
-    ) {
-      console.log("show");
-      $("#myTarget").removeClass("hidden");
-    } else {
-      console.log("hide");
-      $("#myTarget").addClass("hidden");
-    }
-  });
-
-  // bind filter button click
-  $("#filters").on("click", "button", function () {
-    var filterValue = $(this).attr("data-filter");
-    // use filterFn if matches value
-    filterValue = filterFns[filterValue] || filterValue;
-    $grid.isotope({ filter: filterValue });
   });
 
   // bind sort button click
@@ -190,5 +171,29 @@ $(document).ready(function () {
       $buttonGroup.find(".is-checked").removeClass("is-checked");
       $(this).addClass("is-checked");
     });
+  });
+
+  // bind mobile select
+  $("#mobile-sort").change(function () {
+    var sortByValue = $(this).find("option:selected").attr("value");
+    $grid.isotope({ sortBy: sortByValue });
+  });
+
+  // Logic to hide or show the card info
+  const target = document.querySelector("#myTarget");
+  document.addEventListener("click", (event) => {
+    const withinBoundaries = event.composedPath().includes(target);
+    if (
+      (!withinBoundaries &&
+        event.toElement.className.includes("inner-square") &&
+        event.toElement.className.includes("trust")) ||
+      event.toElement.className.includes("responsibility") ||
+      event.toElement.className.includes("innovation") ||
+      event.toElement.className.includes("proactivity")
+    ) {
+      $("#myTarget").removeClass("hidden");
+    } else {
+      $("#myTarget").addClass("hidden");
+    }
   });
 });
