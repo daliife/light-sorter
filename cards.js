@@ -96,6 +96,8 @@ var uniqueSource = `
 </div>
 `;
 
+var firstLoad = true;
+
 function updateDescription(newCardInfo) {
   $(".card-value").text(
     jQuery(newCardInfo).children(".title")[0].innerText +
@@ -113,6 +115,14 @@ function updateDescription(newCardInfo) {
     "src",
     jQuery(newCardInfo).children(".imageUrl")[0].innerText
   );
+}
+
+function showCard() {
+  if (firstLoad) {
+    firstLoad = false;
+    return;
+  }
+  $("#myTarget").removeClass("hidden");
 }
 
 $(document).ready(function () {
@@ -191,7 +201,7 @@ $(document).ready(function () {
       event.toElement.className.includes("innovation") ||
       event.toElement.className.includes("proactivity")
     ) {
-      $("#myTarget").removeClass("hidden");
+      //$("#myTarget").removeClass("hidden");
     } else {
       $("#myTarget").addClass("hidden");
     }
