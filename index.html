@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
+    <title>RFP - Endesa</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <div class="grid-container">
+    <div class="lights-container">
       <!-- SORTING -->
       <div class="navbar-container">
         <div id="sorts" class="filter-container button-group">
@@ -23,7 +23,10 @@
           </button>
         </div>
         <div class="action-container">
-          <button class="btn-value clickable" onclick="console.log('click');">
+          <button
+            class="btn-value clickable"
+            onclick="console.log('ENCIENDE UN NUEVO VALOR');"
+          >
             Enciende un nuevo valor
           </button>
         </div>
@@ -31,15 +34,16 @@
       <!-- SORTING MOBILE -->
       <div class="navbar-mobile-container">
         <label class="order-label" for="order-option"
-          ><i class="fas fa-arrows-alt-v"></i> Ordenar por:
+          ><img class="order-logo" alt="order-logo" src="ordenar.svg" /> Ordenar
+          por:
         </label>
-        <select class="order-options" name="order-option" id="mobile-sort">
+        <select class="order-options" name="order-option" id="order-option">
           <option value="date">Más recientes</option>
           <option value="category">Valor</option>
         </select>
         <button
           class="btn-value btn-value-mobile clickable"
-          onclick="console.log('click');"
+          onclick="console.log('ENCIENDE UN NUEVO VALOR');"
         >
           Enciende un nuevo valor
         </button>
@@ -48,7 +52,7 @@
       <!-- DEMO -->
       <div class="grid">
         <!-- CARD -->
-        <div id="myTarget" class="card-container hidden">
+        <div id="card-container" class="card-container hidden">
           <img
             src="https://via.placeholder.com/220x163"
             alt="card-image"
@@ -60,8 +64,9 @@
             Destacado a modo titular del testimonio a mostrar
           </h2>
           <a href="#" target="_blank" class="card-link"
-            >Ir al detalle <i class="fas fa-chevron-right"></i
-          ></a>
+            >Ir al detalle
+            <img class="chevron-logo" alt="chevron-logo" src="chevron.svg" />
+          </a>
         </div>
       </div>
 
@@ -89,9 +94,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-    <script type="text/javascript" src="input.json"></script>
+    <script src="input.json"></script>
     <script src="cards.js"></script>
   </body>
 </html>

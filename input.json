@@ -1,47 +1,60 @@
 {
   "behaviours": [
     {
-      "type": "innovation",
-      "title": "A",
+      "title": "A title text",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      "imageUrl": "https://picsum.photos/220/161",
+      "url": "https://isotope.metafizzy.co/sorting.html",
       "date": 20202001,
-      "url": "https://google.com",
-      "description": "lorem ipsum sit amet..."
+      "type": "innovation"
     },
     {
-      "type": "trust",
-      "title": "E",
+      "title": "E title text",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      "imageUrl": "https://picsum.photos/220/162",
+      "url": "https://isotope.metafizzy.co/sorting.html",
       "date": 20202005,
-      "url": "https://google.com",
-      "description": "lorem ipsum sit amet..."
+      "type": "trust"
     },
     {
-      "type": "innovation",
-      "title": "D",
+      "title": "D title text",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      "imageUrl": "https://picsum.photos/220/163",
+      "url": "https://isotope.metafizzy.co/sorting.html",
       "date": 20202002,
-      "url": "https://google.com",
-      "description": "lorem ipsum sit amet..."
+      "type": "proactivity"
     },
     {
-      "type": "responsability",
-      "title": "T",
+      "title": "T title text",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      "imageUrl": "https://picsum.photos/220/164",
+      "url": "https://isotope.metafizzy.co/sorting.html",
       "date": 20202003,
-      "url": "https://google.com",
-      "description": "lorem ipsum sit amet..."
-    },
-
-    {
-      "type": "proactivity",
-      "title": "B",
-      "date": 20202010,
-      "url": "https://google.com",
-      "description": "lorem ipsum sit amet..."
+      "type": "trust"
     },
     {
-      "type": "responsability",
-      "title": "G",
-      "date": 20202020,
-      "url": "https://google.com",
-      "description": "lorem ipsum sit amet..."
+      "title": "T title text",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      "imageUrl": "https://picsum.photos/220/165",
+      "url": "https://isotope.metafizzy.co/sorting.html",
+      "date": 20202003,
+      "type": "innovation"
     },
+    {
+      "title": "T title text",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      "imageUrl": "https://picsum.photos/220/166",
+      "url": "https://isotope.metafizzy.co/sorting.html",
+      "date": 20202003,
+      "type": "responsibility"
+    },
+    {
+      "title": "T title text",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      "imageUrl": "https://picsum.photos/220/167",
+      "url": "https://isotope.metafizzy.co/sorting.html",
+      "date": 20202003,
+      "type": "proactivity"
+    }
   ]
-};
+}
