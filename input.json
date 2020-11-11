@@ -1,60 +1,60 @@
 {
   "behaviours": [
     {
-      "title": "A title text",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      "title": "Innovación",
+      "description": "Destacado a modo titular del testimonio a mostrar",
       "imageUrl": "https://picsum.photos/220/161",
       "url": "https://isotope.metafizzy.co/sorting.html",
       "date": 20202001,
-      "type": "innovation"
+      "type": "innovacion"
     },
     {
-      "title": "E title text",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      "title": "Confianza",
+      "description": "Destacado a modo titular del testimonio a mostrar",
       "imageUrl": "https://picsum.photos/220/162",
       "url": "https://isotope.metafizzy.co/sorting.html",
-      "date": 20202005,
-      "type": "trust"
+      "date": 20202002,
+      "type": "confianza"
     },
     {
-      "title": "D title text",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      "title": "Proactividad",
+      "description": "Destacado a modo titular del testimonio a mostrar",
       "imageUrl": "https://picsum.photos/220/163",
       "url": "https://isotope.metafizzy.co/sorting.html",
-      "date": 20202002,
-      "type": "proactivity"
+      "date": 20202003,
+      "type": "proactividad"
     },
     {
-      "title": "T title text",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      "title": "Confianza",
+      "description": "Destacado a modo titular del testimonio a mostrar",
       "imageUrl": "https://picsum.photos/220/164",
       "url": "https://isotope.metafizzy.co/sorting.html",
-      "date": 20202003,
-      "type": "trust"
+      "date": 20202004,
+      "type": "confianza"
     },
     {
-      "title": "T title text",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      "title": "Innovación",
+      "description": "Destacado a modo titular del testimonio a mostrar",
       "imageUrl": "https://picsum.photos/220/165",
       "url": "https://isotope.metafizzy.co/sorting.html",
-      "date": 20202003,
-      "type": "innovation"
+      "date": 20202005,
+      "type": "innovacion"
     },
     {
-      "title": "T title text",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      "title": "Responsabilidad",
+      "description": "Destacado a modo titular del testimonio a mostrar",
       "imageUrl": "https://picsum.photos/220/166",
       "url": "https://isotope.metafizzy.co/sorting.html",
-      "date": 20202003,
-      "type": "responsibility"
+      "date": 20202006,
+      "type": "responsabilidad"
     },
     {
-      "title": "T title text",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+      "title": "Proactividad",
+      "description": "Destacado a modo titular del testimonio a mostrar",
       "imageUrl": "https://picsum.photos/220/167",
       "url": "https://isotope.metafizzy.co/sorting.html",
-      "date": 20202003,
-      "type": "proactivity"
+      "date": 20202007,
+      "type": "proactividad"
     }
   ]
 }

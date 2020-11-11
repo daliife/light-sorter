@@ -1,5 +1,3 @@
-const NUM_ROWS = 10;
-const NUM_COLUMS = 33;
 const multipleSource = `
 {{#each this}}
   <div class="element-item {{this.type}} clickable" data-category="{{this.type}}" onclick="updateDescription(this);">
@@ -15,10 +13,10 @@ const multipleSource = `
 const emptyObject = {
   title: "Z",
   date: 0,
-  type: "empty",
+  type: "vacio",
 };
 const uniqueSource = `
-<div class="element-item {{type}}" data-category="{{type}}" onclick="updateDescription(this); style="pointer-events>
+<div class="element-item {{type}}" data-category="{{type}}">
   <div class="inner-square {{type}}"></div>
   <p class="title">{{title}}</p>
   {{#if description}}
@@ -38,11 +36,7 @@ var inputData;
 var firstLoad = true;
 
 function updateDescription(newCardInfo) {
-  $(".card-value").text(
-    jQuery(newCardInfo).children(".title")[0].innerText +
-      " - " +
-      jQuery(newCardInfo).children(".date")[0].innerText
-  );
+  $(".card-value").text(jQuery(newCardInfo).children(".title")[0].innerText);
   $(".card-description").text(
     jQuery(newCardInfo).children(".description")[0].innerText
   );
@@ -65,11 +59,11 @@ function showCard() {
 }
 
 function initGrid() {
-  // add more rows if json elements are higher than
-  if (inputData.length >= NUM_ROWS * NUM_COLUMS) {
+  // add more rows if json elements are higher than 33 x 10
+  if (inputData.length >= 330) {
     NUM_EMPTY_ELEMENTS = inputData.length + 30;
   } else {
-    NUM_EMPTY_ELEMENTS = NUM_ROWS * NUM_COLUMS - inputData.length;
+    NUM_EMPTY_ELEMENTS = 330 - inputData.length;
   }
 
   // fill elements from data mock/json
@@ -80,6 +74,7 @@ function initGrid() {
   // fill remaining elements with empty
   template = Handlebars.compile(uniqueSource);
   for (let i = 0; i < NUM_EMPTY_ELEMENTS; i++) {
+    emptyObject.date = 19900100 + i;
     result = template(emptyObject);
     $(".grid").append(result);
   }
@@ -101,7 +96,15 @@ function initGrid() {
   // bind sort button click
   $("#sorts").on("click", "button", function () {
     var sortByValue = $(this).attr("data-sort-by");
-    $grid.isotope({ sortBy: sortByValue });
+    isDate = sortByValue == "category";
+    $grid.isotope({ sortBy: sortByValue, sortAscending: isDate });
+  });
+
+  // bind mobile select
+  $("#order-option").change(function () {
+    var sortByValue = $(this).find("option:selected").attr("value");
+    isDate = sortByValue == "category";
+    $grid.isotope({ sortBy: sortByValue, sortAscending: isDate });
   });
 
   // change is-checked class on buttons
@@ -117,26 +120,11 @@ function initGrid() {
     });
   });
 
-  // bind mobile select
-  $("#order-option").change(function () {
-    var sortByValue = $(this).find("option:selected").attr("value");
-    $grid.isotope({ sortBy: sortByValue });
-  });
-
   // Logic to hide or show the card info
   const target = document.querySelector("#card-container");
   document.addEventListener("click", (event) => {
     const withinBoundaries = event.composedPath().includes(target);
-    if (
-      (!withinBoundaries &&
-        event.toElement.className.includes("inner-square") &&
-        event.toElement.className.includes("trust")) ||
-      event.toElement.className.includes("responsibility") ||
-      event.toElement.className.includes("innovation") ||
-      event.toElement.className.includes("proactivity")
-    ) {
-      //$("#card-container").removeClass("hidden");
-    } else {
+    if (!withinBoundaries) {
       $("#card-container").addClass("hidden");
     }
   });
@@ -149,6 +137,49 @@ $(document).ready(function () {
     .then((response) => response.json())
     .then((obj) => {
       inputData = obj;
+    })
+    .catch((err) => {
+      console.log("URL NOT FOUND - LOAD DEFAULT EXAMPLE");
+      inputData = [
+        {
+          title: "A title text",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+          imageUrl: "https://picsum.photos/220/161",
+          url: "https://isotope.metafizzy.co/sorting.html",
+          date: 20202001,
+          type: "responsabilidad",
+        },
+        {
+          title: "E title text",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+          imageUrl: "https://picsum.photos/220/162",
+          url: "https://isotope.metafizzy.co/sorting.html",
+          date: 20202002,
+          type: "confianza",
+        },
+        {
+          title: "D title text",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+          imageUrl: "https://picsum.photos/220/163",
+          url: "https://isotope.metafizzy.co/sorting.html",
+          date: 20202003,
+          type: "proactividad",
+        },
+        {
+          title: "T title text",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+          imageUrl: "https://picsum.photos/220/166",
+          url: "https://isotope.metafizzy.co/sorting.html",
+          date: 20202004,
+          type: "innovacion",
+        },
+      ];
+    })
+    .then(() => {
       initGrid();
     });
 });
