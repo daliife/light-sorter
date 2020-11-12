@@ -76,7 +76,6 @@ function initGrid() {
     sortAscending: false,
     getSortData: {
       title: ".title",
-      description: ".description",
       date: ".date parseInt",
       category: "[data-category]",
     },
