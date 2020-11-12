@@ -1,20 +1,3 @@
-# Light Sorter
-
-## Description
-
-Small project of element sorting and selection for the client Endesa. It consists of an array of bulbs/lights with comments and values that users will have placed using a form.
-
-You can found it [here](https://daliife.github.io/light-sorter/).
-
-## Used libraries
-
-- [Jquery](https://jquery.com/)
-- [Handlebars](https://handlebarsjs.com/)
-- [Isotope](https://isotope.metafizzy.co/)
-
-## JSON Data Structure
-
-```json
 [
   {
     "title": "Destacado a modo titular del testimonio a mostrar",
@@ -66,11 +49,3 @@ You can found it [here](https://daliife.github.io/light-sorter/).
     "type": "proactividad"
   }
 ]
-```
-
-## Screenshots
-
-![Desktop Version](https://imgur.com/OnphlCH.png)
-![Desktop Version with opened card](https://imgur.com/Vu948WK.png)
-![Mobile Version](https://imgur.com/87LeZo6.png)
-![Mobile Version with opened card](https://imgur.com/iFrfwZa)
