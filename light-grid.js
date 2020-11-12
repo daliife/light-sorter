@@ -1,9 +1,8 @@
 const multipleSource = `
 {{#each this}}
-  <div class="element-item {{this.type}} clickable" data-category="{{this.type}}" onclick="updateDescription(this);">
+  <div class="element-item {{this.type}} clickable" data-category="{{this.type}}" onclick="onSelectedElement(this);">
     <div class="inner-square {{this.type}}"></div>
     <p class="title">{{this.title}}</p>
-    <p class="description">{{this.description}}</p>
     <p class="imageUrl">{{this.imageUrl}}</p>
     <p class="url">{{this.url}}</p>
     <p class="date">{{this.date}}</p>
@@ -19,9 +18,6 @@ const uniqueSource = `
 <div class="element-item {{type}}" data-category="{{type}}">
   <div class="inner-square {{type}}"></div>
   <p class="title">{{title}}</p>
-  {{#if description}}
-  <p class="description">{{description}}</p>
-  {{/if}}
   {{#if imageUrl}}
   <p class="imageUrl">{{imageUrl}}</p>
   {{/if}}
@@ -33,13 +29,10 @@ const uniqueSource = `
 `;
 var NUM_EMPTY_ELEMENTS;
 var inputData;
-var firstLoad = true;
 
-function updateDescription(newCardInfo) {
-  $(".card-value").text(jQuery(newCardInfo).children(".title")[0].innerText);
-  $(".card-description").text(
-    jQuery(newCardInfo).children(".description")[0].innerText
-  );
+function onSelectedElement(newCardInfo) {
+  $(".card-value").text(jQuery(newCardInfo).data("category"));
+  $(".card-title").text(jQuery(newCardInfo).children(".title")[0].innerText);
   $(".card-link").attr(
     "href",
     jQuery(newCardInfo).children(".url")[0].innerText
@@ -51,10 +44,6 @@ function updateDescription(newCardInfo) {
 }
 
 function showCard() {
-  if (firstLoad) {
-    firstLoad = false;
-    return;
-  }
   $("#card-container").removeClass("hidden");
 }
 
@@ -120,7 +109,10 @@ function initGrid() {
     });
   });
 
-  // Logic to hide or show the card info
+  // add event listener for image reload
+  document.getElementById("card-image").addEventListener("load", showCard);
+
+  // logic to hide or show the card info
   const target = document.querySelector("#card-container");
   document.addEventListener("click", (event) => {
     const withinBoundaries = event.composedPath().includes(target);
@@ -131,7 +123,7 @@ function initGrid() {
 }
 
 $(document).ready(function () {
-  const JSON_URL_PATH = "http://localhost:3000/behaviours";
+  const JSON_URL_PATH = "https://raw.githubusercontent.com/daliife/light-sorter/develop/input.json";
   const JSON_URL_PATH_ALT = "./input.json";
   fetch(JSON_URL_PATH)
     .then((response) => response.json())

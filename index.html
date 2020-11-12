@@ -23,12 +23,9 @@
           </button>
         </div>
         <div class="action-container">
-          <button
-            class="btn-value clickable"
-            onclick="console.log('ENCIENDE UN NUEVO VALOR');"
-          >
+          <a class="btn-value clickable" href="#scroll-test">
             Enciende un nuevo valor
-          </button>
+          </a>
         </div>
       </div>
       <!-- SORTING MOBILE -->
@@ -41,26 +38,18 @@
           <option value="date">Más recientes</option>
           <option value="category">Valor</option>
         </select>
-        <button
-          class="btn-value btn-value-mobile clickable"
-          onclick="console.log('ENCIENDE UN NUEVO VALOR');"
-        >
+        <a class="btn-value btn-value-mobile clickable" href="#scroll-test">
           Enciende un nuevo valor
-        </button>
+        </a>
       </div>
 
       <!-- DEMO -->
       <div class="grid">
         <!-- CARD -->
         <div id="card-container" class="card-container hidden">
-          <img
-            src="https://via.placeholder.com/220x163"
-            alt="card-image"
-            class="card-image"
-            onload="showCard();"
-          />
+          <img src="#" alt="card-image" class="card-image" id="card-image" />
           <h1 class="card-value">Nombre del valor</h1>
-          <h2 class="card-description">
+          <h2 class="card-title">
             Destacado a modo titular del testimonio a mostrar
           </h2>
           <a href="#" target="_blank" class="card-link"
@@ -91,10 +80,30 @@
       </div>
     </div>
 
+    <div
+      id="scroll-test"
+      style="
+        margin-top: 800px;
+        height: 1000px;
+        width: 100%;
+        background-color: #d3135a;
+      "
+    >
+      <h1
+        style="
+          font-family: Arial, Helvetica, sans-serif;
+          color: white;
+          text-align: center;
+        "
+      >
+        Section for testing anchor
+      </h1>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-    <script src="input.json"></script>
+    <!-- <script src="input.json"></script> -->
     <script src="light-grid.js"></script>
   </body>
 </html>

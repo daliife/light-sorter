@@ -1,60 +1,51 @@
-{
-  "behaviours": [
-    {
-      "title": "Innovación",
-      "description": "Destacado a modo titular del testimonio a mostrar",
-      "imageUrl": "https://picsum.photos/220/161",
-      "url": "https://isotope.metafizzy.co/sorting.html",
-      "date": 20202001,
-      "type": "innovacion"
-    },
-    {
-      "title": "Confianza",
-      "description": "Destacado a modo titular del testimonio a mostrar",
-      "imageUrl": "https://picsum.photos/220/162",
-      "url": "https://isotope.metafizzy.co/sorting.html",
-      "date": 20202002,
-      "type": "confianza"
-    },
-    {
-      "title": "Proactividad",
-      "description": "Destacado a modo titular del testimonio a mostrar",
-      "imageUrl": "https://picsum.photos/220/163",
-      "url": "https://isotope.metafizzy.co/sorting.html",
-      "date": 20202003,
-      "type": "proactividad"
-    },
-    {
-      "title": "Confianza",
-      "description": "Destacado a modo titular del testimonio a mostrar",
-      "imageUrl": "https://picsum.photos/220/164",
-      "url": "https://isotope.metafizzy.co/sorting.html",
-      "date": 20202004,
-      "type": "confianza"
-    },
-    {
-      "title": "Innovación",
-      "description": "Destacado a modo titular del testimonio a mostrar",
-      "imageUrl": "https://picsum.photos/220/165",
-      "url": "https://isotope.metafizzy.co/sorting.html",
-      "date": 20202005,
-      "type": "innovacion"
-    },
-    {
-      "title": "Responsabilidad",
-      "description": "Destacado a modo titular del testimonio a mostrar",
-      "imageUrl": "https://picsum.photos/220/166",
-      "url": "https://isotope.metafizzy.co/sorting.html",
-      "date": 20202006,
-      "type": "responsabilidad"
-    },
-    {
-      "title": "Proactividad",
-      "description": "Destacado a modo titular del testimonio a mostrar",
-      "imageUrl": "https://picsum.photos/220/167",
-      "url": "https://isotope.metafizzy.co/sorting.html",
-      "date": 20202007,
-      "type": "proactividad"
-    }
-  ]
-}
+[
+  {
+    "description": "Destacado a modo titular del testimonio a mostrar",
+    "imageUrl": "https://picsum.photos/220/161",
+    "url": "https://isotope.metafizzy.co/sorting.html",
+    "date": 20202001,
+    "type": "innovacion"
+  },
+  {
+    "description": "Destacado a modo titular del testimonio a mostrar",
+    "imageUrl": "https://picsum.photos/220/162",
+    "url": "https://isotope.metafizzy.co/sorting.html",
+    "date": 20202002,
+    "type": "confianza"
+  },
+  {
+    "description": "Destacado a modo titular del testimonio a mostrar",
+    "imageUrl": "https://picsum.photos/220/163",
+    "url": "https://isotope.metafizzy.co/sorting.html",
+    "date": 20202003,
+    "type": "proactividad"
+  },
+  {
+    "description": "Destacado a modo titular del testimonio a mostrar",
+    "imageUrl": "https://picsum.photos/220/164",
+    "url": "https://isotope.metafizzy.co/sorting.html",
+    "date": 20202004,
+    "type": "confianza"
+  },
+  {
+    "description": "Destacado a modo titular del testimonio a mostrar",
+    "imageUrl": "https://picsum.photos/220/165",
+    "url": "https://isotope.metafizzy.co/sorting.html",
+    "date": 20202005,
+    "type": "innovacion"
+  },
+  {
+    "description": "Destacado a modo titular del testimonio a mostrar",
+    "imageUrl": "https://picsum.photos/220/166",
+    "url": "https://isotope.metafizzy.co/sorting.html",
+    "date": 20202006,
+    "type": "responsabilidad"
+  },
+  {
+    "description": "Destacado a modo titular del testimonio a mostrar",
+    "imageUrl": "https://picsum.photos/220/167",
+    "url": "https://isotope.metafizzy.co/sorting.html",
+    "date": 20202007,
+    "type": "proactividad"
+  }
+]
