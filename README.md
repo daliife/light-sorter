@@ -70,7 +70,18 @@ You can found it [here](https://daliife.github.io/light-sorter/).
 
 ## Screenshots
 
+### Desktop Version
+
 ![Desktop Version](https://imgur.com/OnphlCH.png)
+
+### Desktop Version (opened card)
+
 ![Desktop Version with opened card](https://imgur.com/Vu948WK.png)
+
+### Mobile Version
+
 ![Mobile Version](https://imgur.com/87LeZo6.png)
-![Mobile Version with opened card](https://imgur.com/iFrfwZa)
+
+### Mobile Version (opened card)
+
+![Mobile Version with opened card](https://imgur.com/iFrfwZa.png)
