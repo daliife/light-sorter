@@ -215,7 +215,7 @@ body {
   margin: 1rem 0 0.3125rem 0;
   text-transform: capitalize;
 }
-.card-description {
+.card-title {
   font-size: 1.125rem;
   color: #000000;
   font-weight: 400;

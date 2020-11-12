@@ -123,8 +123,8 @@ function initGrid() {
 }
 
 $(document).ready(function () {
-  const JSON_URL_PATH = "https://raw.githubusercontent.com/daliife/light-sorter/develop/input.json";
-  const JSON_URL_PATH_ALT = "./input.json";
+  const JSON_URL_PATH =
+    "https://raw.githubusercontent.com/daliife/light-sorter/develop/input.json";
   fetch(JSON_URL_PATH)
     .then((response) => response.json())
     .then((obj) => {
@@ -134,40 +134,32 @@ $(document).ready(function () {
       console.log("URL NOT FOUND - LOAD DEFAULT EXAMPLE");
       inputData = [
         {
-          title: "A title text",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
-          imageUrl: "https://picsum.photos/220/161",
+          title: "Destacado a modo titular del testimonio a mostrar",
+          imageUrl: "https://picsum.photos/220/164",
           url: "https://isotope.metafizzy.co/sorting.html",
-          date: 20202001,
-          type: "responsabilidad",
-        },
-        {
-          title: "E title text",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
-          imageUrl: "https://picsum.photos/220/162",
-          url: "https://isotope.metafizzy.co/sorting.html",
-          date: 20202002,
+          date: 20200104,
           type: "confianza",
         },
         {
-          title: "D title text",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
-          imageUrl: "https://picsum.photos/220/163",
+          title: "Destacado a modo titular del testimonio a mostrar",
+          imageUrl: "https://picsum.photos/220/165",
           url: "https://isotope.metafizzy.co/sorting.html",
-          date: 20202003,
-          type: "proactividad",
+          date: 20200105,
+          type: "innovacion",
         },
         {
-          title: "T title text",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+          title: "Destacado a modo titular del testimonio a mostrar",
           imageUrl: "https://picsum.photos/220/166",
           url: "https://isotope.metafizzy.co/sorting.html",
-          date: 20202004,
-          type: "innovacion",
+          date: 20200106,
+          type: "responsabilidad",
+        },
+        {
+          title: "Destacado a modo titular del testimonio a mostrar",
+          imageUrl: "https://picsum.photos/220/167",
+          url: "https://isotope.metafizzy.co/sorting.html",
+          date: 20200107,
+          type: "proactividad",
         },
       ];
     })
