@@ -175,7 +175,7 @@ body {
   z-index: 5;
   display: flex;
   flex-direction: column;
-  transition: 500ms all ease-in-out;
+  /* transition: 500ms all ease-in-out; */
   opacity: 1;
 }
 .card-value {
@@ -248,10 +248,8 @@ body {
     margin-bottom: 1rem !important;
   }
   .card-container {
-    position: sticky !important;
     left: 50% !important;
-    top: 0 !important;
-    transform: translate(0%, 0%) !important;
+    transform: translate(-50%, 0%) !important;
     max-width: none !important;
   }
   .grid-container {

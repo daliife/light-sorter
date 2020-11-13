@@ -1,11 +1,13 @@
 const multipleSource = `
 {{#each this}}
-  <div class="element-item {{this.type}} clickable" data-category="{{this.type}}" onclick="onSelectedElement(this);">
+  <div class="element-item {{this.type}} clickable" 
+    data-category="{{this.type}}" 
+    data-title="{{this.title}}" 
+    data-image-url="{{this.imageUrl}}" 
+    data-url="{{this.url}}" 
+    data-date="{{this.date}}" 
+    onclick="onSelectedElement(this)">
     <div class="inner-square {{this.type}}"></div>
-    <p class="title">{{this.title}}</p>
-    <p class="imageUrl">{{this.imageUrl}}</p>
-    <p class="url">{{this.url}}</p>
-    <p class="date">{{this.date}}</p>
   </div>
 {{/each}}
 `;
@@ -15,24 +17,19 @@ const emptyObject = {
   type: "vacio",
 };
 const uniqueSource = `
-<div class="element-item {{type}}" data-category="{{type}}">
+<div class="element-item {{type}}" 
+  data-category="{{type}}" 
+  data-title="{{title}}" 
+  data-date="{{date}}">
   <div class="inner-square {{type}}"></div>
-  <p class="title">{{title}}</p>
-  {{#if imageUrl}}
-  <p class="imageUrl">{{imageUrl}}</p>
-  {{/if}}
-  {{#if url}}
-  <p class="url">{{url}}</p>
-  {{/if}}
-  <p class="date">{{date}}</p>
 </div>
 `;
 var NUM_EMPTY_ELEMENTS;
 var inputData;
 
 function onSelectedElement(newCardInfo) {
-  var isMobile = false;
   // device detection
+  var isMobile = false;
   if (
     /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(
       navigator.userAgent
@@ -43,18 +40,16 @@ function onSelectedElement(newCardInfo) {
   ) {
     isMobile = true;
   }
+  const heightGrid = parseInt($(".grid").css("height").slice(0, -2));
+  const widthGrid = parseInt($(".grid").css("width").slice(0, -2));
+  const heightCard = parseInt($(".card-container").css("height").slice(0, -2));
+  const widthCard = parseInt($(".card-container").css("width").slice(0, -2));
+  const margin = 8; // in px
+  const elementSize = 32; //in px
+  const marginY = margin / 2; // in px
+  const yPos = parseInt(jQuery(newCardInfo).css("top").slice(0, -2));
+  const xPos = parseInt(jQuery(newCardInfo).css("left").slice(0, -2));
   if (!isMobile) {
-    const heightGrid = parseInt($(".grid").css("height").slice(0, -2));
-    const widthGrid = parseInt($(".grid").css("width").slice(0, -2));
-    const heightCard = parseInt(
-      $(".card-container").css("height").slice(0, -2)
-    );
-    const widthCard = parseInt($(".card-container").css("width").slice(0, -2));
-    const margin = 8; // in px
-    const elementSize = 32; //in px
-    const marginY = margin / 2; // in px
-    const yPos = parseInt(jQuery(newCardInfo).css("top").slice(0, -2));
-    const xPos = parseInt(jQuery(newCardInfo).css("left").slice(0, -2));
     var newY;
     if (yPos + heightCard <= heightGrid) {
       newY = yPos + marginY + "px";
@@ -70,18 +65,20 @@ function onSelectedElement(newCardInfo) {
       newX = xPos - elementSize * 2 + marginY - widthCard + "px";
     }
     $(".card-container").css("left", newX);
+  } else {
+    if (yPos + heightCard <= heightGrid) {
+      newY = yPos + elementSize + margin + "px";
+    } else {
+      newY = yPos - margin * 2 - elementSize - heightCard + "px";
+    }
+    $(".card-container").css("top", newY);
   }
 
+  // update content
   $(".card-value").text(jQuery(newCardInfo).data("category"));
-  $(".card-title").text(jQuery(newCardInfo).children(".title")[0].innerText);
-  $(".card-link").attr(
-    "href",
-    jQuery(newCardInfo).children(".url")[0].innerText
-  );
-  $(".card-image").attr(
-    "src",
-    jQuery(newCardInfo).children(".imageUrl")[0].innerText
-  );
+  $(".card-title").text(jQuery(newCardInfo).data("title"));
+  $(".card-link").attr("href", jQuery(newCardInfo).data("url"));
+  $(".card-image").attr("src", jQuery(newCardInfo).data("image-url"));
   showCard();
 }
 
@@ -114,11 +111,11 @@ function initGrid() {
   var $grid = $(".grid").isotope({
     itemSelector: ".element-item",
     layoutMode: "masonry",
-    sortBy: "date",
+    sortBy: "random",
     sortAscending: false,
     getSortData: {
-      title: ".title",
-      date: ".date parseInt",
+      title: "[data-title]",
+      date: "[data-date]",
       category: "[data-category]",
     },
   });
