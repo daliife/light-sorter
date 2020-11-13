@@ -115,7 +115,7 @@ function initGrid() {
   var $grid = $(".grid").isotope({
     itemSelector: ".element-item",
     layoutMode: "masonry",
-    sortBy: "random",
+    sortBy: "date",
     sortAscending: false,
     getSortData: {
       title: ".title",
