@@ -155,9 +155,10 @@ body {
   border: none;
   transition: 150ms all ease-in-out;
   text-decoration: none;
-  appearance: button;
   box-sizing: border-box;
   text-align: center;
+  appearance: button;
+  display: inline-block;
 }
 .btn-value:hover {
   opacity: 0.8;
