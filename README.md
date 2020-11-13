@@ -14,6 +14,10 @@ You can found it [here](https://daliife.github.io/light-sorter/).
 
 ## JSON Data Structure
 
+The variable **JSON_URL_PATH** will be the url that we will be fetching to retrieve the json info and load it to the handlebars and isotope libraries.
+
+Here we can see an example of that json structure:
+
 ```json
 [
   {
