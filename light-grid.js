@@ -100,9 +100,8 @@ function initGrid() {
   // fill elements from data mock/json
   var template = Handlebars.compile(multipleSource);
   var result = template(inputData);
-  for (let i = 0; i < 1; i++) {
-    $(".grid").append(result);
-  }
+  $(".grid").append(result);
+
   // fill remaining elements with empty
   template = Handlebars.compile(uniqueSource);
   for (let i = 0; i < NUM_EMPTY_ELEMENTS; i++) {
