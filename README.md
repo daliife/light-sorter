@@ -14,13 +14,14 @@ You can found it [here](https://daliife.github.io/light-sorter/).
 
 ## JSON Data Structure
 
-The variable **JSON_URL_PATH** will be the url that we will be fetching to retrieve the json info and load it to the handlebars and isotope libraries.
+The variable **JSON_URL_PATH** will be the url that we will be fetching to retrieve the json info and load it to the handlebars and isotope libraries. You will find it in the **light-grid.js, line 166**.
 
 Here we can see an example of that json structure:
 
 ```json
 [
   {
+    "value": "Innovación",
     "title": "Destacado a modo titular del testimonio a mostrar",
     "imageUrl": "https://picsum.photos/220/161",
     "url": "https://isotope.metafizzy.co/sorting.html",
@@ -28,6 +29,7 @@ Here we can see an example of that json structure:
     "type": "innovacion"
   },
   {
+    "value": "Confianza",
     "title": "Destacado a modo titular del testimonio a mostrar",
     "imageUrl": "https://picsum.photos/220/162",
     "url": "https://isotope.metafizzy.co/sorting.html",
@@ -35,6 +37,7 @@ Here we can see an example of that json structure:
     "type": "confianza"
   },
   {
+    "value": "Proactividad",
     "title": "Destacado a modo titular del testimonio a mostrar",
     "imageUrl": "https://picsum.photos/220/163",
     "url": "https://isotope.metafizzy.co/sorting.html",
@@ -42,6 +45,7 @@ Here we can see an example of that json structure:
     "type": "proactividad"
   },
   {
+    "value": "Confianza",
     "title": "Destacado a modo titular del testimonio a mostrar",
     "imageUrl": "https://picsum.photos/220/164",
     "url": "https://isotope.metafizzy.co/sorting.html",
@@ -49,6 +53,7 @@ Here we can see an example of that json structure:
     "type": "confianza"
   },
   {
+    "value": "Innovación",
     "title": "Destacado a modo titular del testimonio a mostrar",
     "imageUrl": "https://picsum.photos/220/165",
     "url": "https://isotope.metafizzy.co/sorting.html",
@@ -56,6 +61,7 @@ Here we can see an example of that json structure:
     "type": "innovacion"
   },
   {
+    "value": "Responsabilidad",
     "title": "Destacado a modo titular del testimonio a mostrar",
     "imageUrl": "https://picsum.photos/220/166",
     "url": "https://isotope.metafizzy.co/sorting.html",
@@ -63,6 +69,7 @@ Here we can see an example of that json structure:
     "type": "responsabilidad"
   },
   {
+    "value": "Proactividad",
     "title": "Destacado a modo titular del testimonio a mostrar",
     "imageUrl": "https://picsum.photos/220/167",
     "url": "https://isotope.metafizzy.co/sorting.html",
@@ -78,14 +85,6 @@ Here we can see an example of that json structure:
 
 ![Desktop Version](https://imgur.com/OnphlCH.png)
 
-### Desktop Version (opened card)
-
-![Desktop Version with opened card](https://imgur.com/Vu948WK.png)
-
 ### Mobile Version
 
 ![Mobile Version](https://imgur.com/87LeZo6.png)
-
-### Mobile Version (opened card)
-
-![Mobile Version with opened card](https://imgur.com/iFrfwZa.png)
