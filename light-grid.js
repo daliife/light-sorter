@@ -2,6 +2,7 @@ const multipleSource = `
 {{#each this}}
   <div class="element-item {{this.type}} clickable" 
     data-category="{{this.type}}" 
+    data-value="{{this.value}}" 
     data-title="{{this.title}}" 
     data-image-url="{{this.imageUrl}}" 
     data-url="{{this.url}}" 
@@ -75,7 +76,7 @@ function onSelectedElement(newCardInfo) {
   }
 
   // update content
-  $(".card-value").text(jQuery(newCardInfo).data("category"));
+  $(".card-value").text(jQuery(newCardInfo).data("value"));
   $(".card-title").text(jQuery(newCardInfo).data("title"));
   $(".card-link").attr("href", jQuery(newCardInfo).data("url"));
   $(".card-image").attr("src", jQuery(newCardInfo).data("image-url"));
@@ -172,6 +173,7 @@ $(document).ready(function () {
       console.log("URL NOT FOUND - LOAD DEFAULT EXAMPLE");
       inputData = [
         {
+          value: "Confianza",
           title: "Destacado a modo titular del testimonio a mostrar",
           imageUrl: "https://picsum.photos/220/164",
           url: "https://isotope.metafizzy.co/sorting.html",
@@ -179,6 +181,7 @@ $(document).ready(function () {
           type: "confianza",
         },
         {
+          value: "Innovación",
           title: "Destacado a modo titular del testimonio a mostrar",
           imageUrl: "https://picsum.photos/220/165",
           url: "https://isotope.metafizzy.co/sorting.html",
@@ -186,6 +189,7 @@ $(document).ready(function () {
           type: "innovacion",
         },
         {
+          value: "Responsabilidad",
           title: "Destacado a modo titular del testimonio a mostrar",
           imageUrl: "https://picsum.photos/220/166",
           url: "https://isotope.metafizzy.co/sorting.html",
@@ -193,6 +197,7 @@ $(document).ready(function () {
           type: "responsabilidad",
         },
         {
+          value: "Proactividad",
           title: "Destacado a modo titular del testimonio a mostrar",
           imageUrl: "https://picsum.photos/220/167",
           url: "https://isotope.metafizzy.co/sorting.html",
